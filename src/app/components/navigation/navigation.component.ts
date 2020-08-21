@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-public userName :string = ''
+public userName :string = '';
+public cartItems : number = 4 ;
   constructor() { 
     this.userName = sessionStorage.getItem('username');
   }
 
   ngOnInit(): void {
-  }
+
+  } 
 
 }

@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatBadgeModule} from '@angular/material/badge'
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatGridListModule,
     MatListModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBadgeModule
   ],
   exports: [
     MatButtonModule,
@@ -37,7 +39,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatGridListModule,
     MatListModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule {}
