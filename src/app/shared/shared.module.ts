@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule({
-    imports: [MaterialModule],
+    imports: [
+        MaterialModule,
+       ],
     exports: [MaterialModule],
     declarations: [],
     providers: [],

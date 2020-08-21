@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {BooksService } from '../books.service';
-import { Subscription, Observable } from 'rxjs';
-import { Book } from '../book.model';
-
+import { Subscription } from 'rxjs';
+import { BooksService } from '../books.service';
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  selector: 'app-trending-books',
+  templateUrl: './trending-books.component.html',
+  styleUrls: ['./trending-books.component.css']
 })
-export class BookListComponent implements OnInit {
+export class TrendingBooksComponent implements OnInit {
+
   books: any = [];
   //books$: Observable<Book[]>;
   subscription: Subscription;
@@ -21,5 +20,6 @@ export class BookListComponent implements OnInit {
       console.log(this.books)
     });
   }
+
 
 }

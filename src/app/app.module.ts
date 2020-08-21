@@ -5,21 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './components/navigation/navigation/navigation.component';
-
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { LoginComponent } from './components/login/login.component';
+import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,   
-  ],
+  declarations: [AppComponent, NavigationComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

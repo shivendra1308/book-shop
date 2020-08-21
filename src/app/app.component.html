@@ -1,5 +1,7 @@
-
-
-<app-navigation></app-navigation>
-
-<router-outlet></router-outlet>
+<div *ngIf="validUser; else elseBlock">
+    <app-navigation *ngIf="validUser"></app-navigation>
+    <router-outlet></router-outlet>
+</div>
+<ng-template #elseBlock>
+    <app-login  (submitEM)="login($event)"></app-login>
+</ng-template>
