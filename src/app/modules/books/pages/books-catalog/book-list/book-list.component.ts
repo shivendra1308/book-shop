@@ -11,7 +11,6 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class BookListComponent implements OnInit {
   books: any = [];
-  //books$: Observable<Book[]>;
   subscription: Subscription;
   constructor(private bookService: BooksService) { }
 

@@ -1,0 +1,23 @@
+<div class="cart-row">
+  <mat-grid-list cols="7" rowHeight="100px">
+    <mat-grid-tile><img width="70px" [src]="row.volumeInfo?.imageLinks?.smallThumbnail"/></mat-grid-tile>
+    <mat-grid-tile
+      ><a 
+        >{{ row.volumeInfo?.title }}
+      </a></mat-grid-tile
+    >
+    <mat-grid-tile>{{ row.volumeInfo?.publisher }}</mat-grid-tile>
+    <mat-grid-tile>{{ row.volumeInfo?.pageCount | currency: 'EUR':true }}</mat-grid-tile>
+    <mat-grid-tile
+      ><input
+        type="number"
+      
+    /></mat-grid-tile>
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile
+      ><a >
+        <i style="cursor: pointer;" class="material-icons">close</i></a
+      ></mat-grid-tile
+    >
+  </mat-grid-list>
+</div>

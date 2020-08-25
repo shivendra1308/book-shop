@@ -1,0 +1,24 @@
+<div >
+    <ng-template #empty>
+      <!-- <app-cart-empty></app-cart-empty> -->
+      Your Cart Is Empty
+    </ng-template>
+    <div *ngIf="selectedBooks.length > 0; else empty">
+      <h3>
+        Your cart
+      </h3>
+      <div>{{selectedBooks.length}} items</div>
+  
+      <app-cart-row *ngFor="let row of selectedBooks" [row]="row" 
+        (remove)="removeFromCart(row)"     
+      ></app-cart-row>
+  
+      <div class="footer">
+        <div style="display:inline-block"> Total </div>
+  
+        <button md-raised-button  color="primary">Checkout</button>
+      </div>
+  
+    </div>
+  
+  </div>

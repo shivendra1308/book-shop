@@ -81,20 +81,20 @@ export class BooksService {
   // ];
 
   public cartArray: any = [];
+  public selectedBooks : any =[];
   public cartArrayService = new BehaviorSubject(this.cartArray);
 
   constructor(private http: HttpClient) {}
 
   public getBooks() {
     let url = 'https://www.googleapis.com/books/v1/volumes?q=java';
-    //return this.books.slice();
     return this.http.get(url);
   }
-  public addToCart(bookId) {
+  public addToCart(book) {
     let message = '';
-    const isInArray = this.cartArray.includes(bookId);
-    !isInArray ? this.cartArray.push(bookId) : null;
-    this.cartArrayService.next(this.cartArray);
+    const isInArray = this.cartArray.includes(book['id']);
+    !isInArray ? this.selectedBooks.push(book) : null;
+    this.cartArrayService.next(this.selectedBooks);
     if (isInArray) {
       return (message = 'Item Already in Cart');
     } else {

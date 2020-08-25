@@ -10,7 +10,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition,
   styleUrls: ['./book-item.component.css']
 })
 export class BookItemComponent implements OnInit {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   @Input() book: any;
@@ -22,8 +22,8 @@ export class BookItemComponent implements OnInit {
   }
 
   public addToCart(){
-    console.log(this.book['id']);
-    const message = this.bookService.addToCart(this.book['id'])
+    console.log(this.book);
+    const message = this.bookService.addToCart(this.book)
     console.log(message)
    this.openSnackBar(message, null);
   }
