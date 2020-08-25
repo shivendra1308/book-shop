@@ -5,7 +5,9 @@
   </mat-card-header>
   <img mat-card-image src="{{book.volumeInfo?.imageLinks.smallThumbnail}}" alt="Photo of a book">
   <mat-card-actions>
+   
     <section>     
+      <mat-card-title> Price : {{ book?.volumeInfo?.pageCount }}</mat-card-title>
       <div class="example-button-row" style="text-align: center;">
         <button mat-raised-button color="warn">Buy</button>
         <button mat-raised-button color="warn"><span class="material-icons">
