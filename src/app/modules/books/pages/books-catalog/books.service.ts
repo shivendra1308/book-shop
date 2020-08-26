@@ -82,7 +82,9 @@ export class BooksService {
 
   public cartArray: any = [];
   public selectedBooks : any =[];
-  public cartArrayService = new BehaviorSubject(this.cartArray);
+  public cartArrayBooksService = new BehaviorSubject(this.selectedBooks);
+  public cartArrayItemService = new BehaviorSubject(this.cartArray);
+
 
   constructor(private http: HttpClient) {}
 
@@ -93,12 +95,14 @@ export class BooksService {
   public addToCart(book) {
     let message = '';
     const isInArray = this.cartArray.includes(book['id']);
-    !isInArray ? this.selectedBooks.push(book) : null;
-    this.cartArrayService.next(this.selectedBooks);
-    if (isInArray) {
-      return (message = 'Item Already in Cart');
-    } else {
+    if(!isInArray){
+      this.cartArray.push(book['id']);
+      this.selectedBooks.push(book);     
+      this.cartArrayBooksService.next(this.selectedBooks);
+      this.cartArrayItemService.next(this.cartArray);
       return (message = 'Item Added to Cart');
-    }
+    }else{
+      return (message = 'Item Already in Cart');
+    }   
   }
 }

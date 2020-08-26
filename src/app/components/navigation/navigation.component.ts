@@ -14,9 +14,8 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bookService.cartArrayService.subscribe((data) => {
+    this.bookService.cartArrayItemService.subscribe((data) => {
       this.cartItems = data.length;
-      console.log(this.cartItems);
     });
   }
 }

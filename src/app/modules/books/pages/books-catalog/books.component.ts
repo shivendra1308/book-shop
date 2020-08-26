@@ -10,7 +10,6 @@ export class BooksComponent implements OnInit {
 
   constructor( private router: Router) {
     const validUser = sessionStorage.getItem('username');
-    console.log(validUser)
     this.authenticateUser(validUser);
    
    }

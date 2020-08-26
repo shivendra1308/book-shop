@@ -16,9 +16,8 @@ export class CartComponent implements OnInit {
   }
 
   public getSelectedBooks() {
-    this.bookService.cartArrayService.subscribe((data) => {
+    this.bookService.cartArrayBooksService.subscribe((data) => {
       this.selectedBooks = data;
-      console.log(this.selectedBooks);
     });
   }
 

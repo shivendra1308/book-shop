@@ -22,9 +22,7 @@ export class BookItemComponent implements OnInit {
   }
 
   public addToCart(){
-    console.log(this.book);
     const message = this.bookService.addToCart(this.book)
-    console.log(message)
    this.openSnackBar(message, null);
   }
   public openSnackBar(message: string, action: string) {
