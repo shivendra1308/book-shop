@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">Kaveri Book Shop</a>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #563d7c">
+  <a class="navbar-brand nav-bar-color">Kaveri Book Shop</a>
+  <div class="collapse navbar-collapse nav-bar-color" id="navbarText">
+    <ul class="navbar-nav mr-auto nav-bar-color">
       <li class="nav-item active" routerLinkActive="active">
-        <a class="nav-link" routerLink="/books"> <b>Catalog</b></a>
+        <a class="nav-link" routerLink="/books" style="color:whitesmoke;font-size: 23px;"> Catalog</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/cart"><b>Cart</b></a>
+        <a class="nav-link "  style="color:whitesmoke;font-size: 20px;" routerLink="/cart"> Cart</a>
       </li>
     </ul>
-    <span class="navbar-text">
-      <strong>Welcome,{{userName}}</strong>      
+    <span class="navbar-text nav-bar-color" style="font-size: 20px;">
+    Welcome,{{userName}}      
     </span>  
-    <span class="material-icons" matBadge={{cartItems}} matBadgeColor="warn">
+    <span class="material-icons nav-bar-color"style="font-size: 33px;" matBadge={{cartItems}} matBadgeColor="warn">
       shopping_cart
       </span>
   </div>
