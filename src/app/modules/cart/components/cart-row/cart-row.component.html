@@ -8,16 +8,17 @@
     >
     <mat-grid-tile>{{ row.volumeInfo?.publisher }}</mat-grid-tile>
     <mat-grid-tile>{{ row.volumeInfo?.pageCount | currency: 'EUR':true }}</mat-grid-tile>
-    <mat-grid-tile
+    <!-- <mat-grid-tile
       ><input
         type="number"
       
-    /></mat-grid-tile>
+    /></mat-grid-tile> -->
     <mat-grid-tile>1</mat-grid-tile>
     <mat-grid-tile
-      ><a >
+      ><a  (click)="remove.emit()" >
         <i style="cursor: pointer;" class="material-icons">close</i></a
       ></mat-grid-tile
     >
   </mat-grid-list>
 </div>
+<mat-divider></mat-divider>

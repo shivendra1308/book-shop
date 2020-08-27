@@ -81,10 +81,9 @@ export class BooksService {
   // ];
 
   public cartArray: any = [];
-  public selectedBooks : any =[];
+  public selectedBooks: any = [];
   public cartArrayBooksService = new BehaviorSubject(this.selectedBooks);
   public cartArrayItemService = new BehaviorSubject(this.cartArray);
-
 
   constructor(private http: HttpClient) {}
 
@@ -95,14 +94,27 @@ export class BooksService {
   public addToCart(book) {
     let message = '';
     const isInArray = this.cartArray.includes(book['id']);
-    if(!isInArray){
+    if (!isInArray) {
       this.cartArray.push(book['id']);
-      this.selectedBooks.push(book);     
+      this.selectedBooks.push(book);
       this.cartArrayBooksService.next(this.selectedBooks);
       this.cartArrayItemService.next(this.cartArray);
       return (message = 'Item Added to Cart');
-    }else{
+    } else {
       return (message = 'Item Already in Cart');
-    }   
+    }
+  }
+
+  public removeFromCart(bookToRemove) {
+    this.cartArray = [];
+    this.selectedBooks = this.selectedBooks.filter(
+      (e) => e.id != bookToRemove.id
+    );
+    this.selectedBooks.map((e) => {
+      this.cartArray.push(e.id);
+    });
+    this.cartArrayBooksService.next(this.selectedBooks);
+    this.cartArrayItemService.next(this.cartArray);
+    console.log(this.selectedBooks);
   }
 }

@@ -20,5 +20,9 @@ export class CartComponent implements OnInit {
       this.selectedBooks = data;
     });
   }
+  public removeFromCart(bookToRemove: any) {
+    this.bookService.removeFromCart(bookToRemove);
+  }
+
 
 }

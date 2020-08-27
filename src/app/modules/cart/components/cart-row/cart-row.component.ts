@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart-row',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartRowComponent implements OnInit {
   @Input() row;
+  @Output() remove:EventEmitter<any>=new EventEmitter();
  
 
   constructor() { }

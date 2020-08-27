@@ -1,24 +1,22 @@
-<div >
-    <ng-template #empty>
-      <!-- <app-cart-empty></app-cart-empty> -->
-      Your Cart Is Empty
-    </ng-template>
-    <div *ngIf="selectedBooks.length > 0; else empty">
-      <h3>
-        Your cart
-      </h3>
-      <div>{{selectedBooks.length}} items</div>
-  
-      <app-cart-row *ngFor="let row of selectedBooks" [row]="row" 
-        (remove)="removeFromCart(row)"     
-      ></app-cart-row>
-  
-      <div class="footer">
-        <div style="display:inline-block"> Total </div>
-  
-        <button md-raised-button  color="primary">Checkout</button>
-      </div>
-  
+<div>
+  <ng-template #empty>
+    <h1 style="text-align: center;padding: 8%;
+    font-size: 50px;">
+      <strong>Your Cart Is Empty !!!</strong>
+    </h1>
+  </ng-template>
+  <div *ngIf="selectedBooks.length > 0; else empty" style="text-align: center;">
+    <h1  style="font-size: 40px;padding: 2%">
+      <strong> Your cart</strong>
+    </h1>
+    <div>
+      <h2>
+        <strong>{{selectedBooks.length}} items</strong>
+      </h2></div>
+    <app-cart-row *ngFor="let row of selectedBooks" [row]="row" (remove)="removeFromCart(row)"></app-cart-row>
+    <div class="footer">
+      <div style="display:inline-block"> Total </div>
+      <button mat-flat-button color="accent">Checkout</button>
     </div>
-  
   </div>
+</div>

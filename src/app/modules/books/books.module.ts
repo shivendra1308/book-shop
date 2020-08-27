@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksRoutingModule } from './books-routing.module';
-//import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
 
 
@@ -20,7 +19,6 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     SharedModule,
     BooksRoutingModule,
-   // MatSnackBarModule
   ]
 })
 export class BooksModule { }
